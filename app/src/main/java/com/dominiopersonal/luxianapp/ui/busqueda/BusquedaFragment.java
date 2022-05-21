@@ -1,4 +1,4 @@
-package com.dominiopersonal.luxianapp.ui.dashboard;
+package com.dominiopersonal.luxianapp.ui.busqueda;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.dominiopersonal.luxianapp.databinding.FragmentDashboardBinding;
+import com.dominiopersonal.luxianapp.databinding.FragmentBusquedaBinding;
 
-public class DashboardFragment extends Fragment {
+public class BusquedaFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentBusquedaBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        BusquedaViewModel busquedaViewModel =
+                new ViewModelProvider(this).get(BusquedaViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentBusquedaBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textBusqueda;
+        busquedaViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
