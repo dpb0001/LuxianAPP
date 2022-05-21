@@ -1,16 +1,16 @@
-package com.dominiopersonal.luxianapp.ui.notifications;
+package com.dominiopersonal.luxianapp.ui.busqueda;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class BusquedaViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public BusquedaViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("Te encuentras en busquedas");
     }
 
     public LiveData<String> getText() {

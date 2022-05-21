@@ -1,16 +1,16 @@
-package com.dominiopersonal.luxianapp.ui.dashboard;
+package com.dominiopersonal.luxianapp.ui.perfil;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class PerfilViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public PerfilViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("Fragmento Perfil");
     }
 
     public LiveData<String> getText() {
