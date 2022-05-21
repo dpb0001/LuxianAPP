@@ -22,4 +22,9 @@
         android:name="com.dominiopersonal.luxianapp.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_pruebas"
+        android:name="com.dominiopersonal.luxianapp.ui.notifications.PruebasFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_pruebas" />
 </navigation>
