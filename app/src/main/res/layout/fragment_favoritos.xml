@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.pruebas.PruebasFragment">
+    tools:context=".ui.favoritos.FavoritosFragment">
 
     <TextView
-        android:id="@+id/text_pruebas"
+        android:id="@+id/text_favoritos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
