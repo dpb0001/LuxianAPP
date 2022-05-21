@@ -23,7 +23,7 @@
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
-        android:id="@+id/navigation_pruebas"
+        android:id="@+id/navigation_favoritos"
         android:name="com.dominiopersonal.luxianapp.ui.favoritos.FavoritosFragment"
         android:label="@string/title_favoritos"
         tools:layout="@layout/fragment_favoritos" />

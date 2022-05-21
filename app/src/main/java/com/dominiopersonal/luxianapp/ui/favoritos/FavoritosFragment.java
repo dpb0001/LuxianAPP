@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.dominiopersonal.luxianapp.databinding.FragmentFavoritosBinding;
-import com.dominiopersonal.luxianapp.ui.favoritos.FavoritosViewModel;
 
 public class FavoritosFragment extends Fragment {
 
