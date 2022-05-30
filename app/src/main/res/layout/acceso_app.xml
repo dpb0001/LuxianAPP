@@ -6,43 +6,44 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextContrasenaAcceso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPassword|textEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/txtContrasenaAcceso"
-        app:layout_constraintTop_toBottomOf="@+id/txtContrasenaAcceso" />
-
-    <TextView
-        android:id="@+id/txtCorreoAcceso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
-        android:text="Correo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBienvenida" />
-
-    <EditText
         android:id="@+id/editTextCorreoAcceso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/txtCorreoAcceso"
         app:layout_constraintTop_toBottomOf="@+id/txtCorreoAcceso" />
 
     <TextView
+        android:id="@+id/txtCorreoAcceso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="80dp"
+        android:text="Correo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBienvenida" />
+
+    <TextView
         android:id="@+id/txtContrasenaAcceso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="Contraseña"
         app:layout_constraintStart_toStartOf="@+id/editTextCorreoAcceso"
         app:layout_constraintTop_toBottomOf="@+id/editTextCorreoAcceso" />
+
+    <EditText
+        android:id="@+id/editTextContrasenaAcceso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPassword|textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/txtContrasenaAcceso"
+        app:layout_constraintTop_toBottomOf="@+id/txtContrasenaAcceso" />
 
     <TextView
         android:id="@+id/txtBienvenida"
@@ -58,27 +59,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnAcceso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:text="Acceder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextContrasenaAcceso" />
+
     <TextView
         android:id="@+id/txtCreacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="19dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:minHeight="48dp"
         android:text="Crear cuenta"
         android:textColor="#3F51B5"
         android:textIsSelectable="true"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toStartOf="@+id/btnAcceso"
         app:layout_constraintTop_toBottomOf="@+id/btnAcceso" />
-
-    <Button
-        android:id="@+id/btnAcceso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Acceder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextContrasenaAcceso" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
