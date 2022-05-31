@@ -4,4 +4,8 @@
     <string name="title_busqueda">Buscar</string>
     <string name="title_perfil">Perfil</string>
     <string name="title_favoritos">Favoritos</string>
+
+
+    <string name="correo_incorrecto">Ingrese un correo válido</string>
+    <string name="contraseña_incorrecta">Ingrese una contraseña con más de 6 dígitos</string>
 </resources>
