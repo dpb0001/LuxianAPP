@@ -31,6 +31,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
+    public RecyclerViewAdapter(Home home, ArrayList<String> mNames, ArrayList<String> mImageUrls) {
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
