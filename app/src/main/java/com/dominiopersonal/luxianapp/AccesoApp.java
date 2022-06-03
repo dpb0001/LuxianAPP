@@ -107,6 +107,7 @@ public class AccesoApp extends AppCompatActivity {
 
     private void irainicio() {
         Intent i = new Intent(this,MainActivity.class);
+        i.putExtra("email",etCorreo.getText().toString());
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
