@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.dominiopersonal.luxianapp.AccesoApp;
 import com.dominiopersonal.luxianapp.R;
 import com.dominiopersonal.luxianapp.databinding.FragmentPerfilBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -49,7 +50,7 @@ public class PerfilFragment extends Fragment {
     }
 
     private void irloging() {
-        Intent i = new Intent(getContext(), PerfilFragment.class);
+        Intent i = new Intent(getContext(), AccesoApp.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
