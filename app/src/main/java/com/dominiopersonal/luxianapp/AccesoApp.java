@@ -26,8 +26,7 @@ public class AccesoApp extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AccesoApp.this,CrearCuenta.class);
-                startActivity(i);
+
             }
         });
 
@@ -35,7 +34,8 @@ public class AccesoApp extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(AccesoApp.this,CrearCuenta.class);
+                startActivity(i);
             }
         });
 
