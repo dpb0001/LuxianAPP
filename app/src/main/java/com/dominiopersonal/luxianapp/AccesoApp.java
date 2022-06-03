@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
@@ -47,6 +48,13 @@ public class AccesoApp extends AppCompatActivity {
         validacion = new AwesomeValidation(ValidationStyle.BASIC);
         validacion.addValidation(this,R.id.editTextCorreoAcceso, Patterns.EMAIL_ADDRESS,R.string.correo_incorrecto);
         validacion.addValidation(this,R.id.editTextContrasenaAcceso,".{6,}",R.string.contraseña_incorrecta);
+
+        FirebaseAuth automatico = FirebaseAuth.getInstance();
+        FirebaseUser usuario = automatico.getCurrentUser();
+
+        if (usuario != null){
+            irainicio();
+        }
 
         etCorreo = findViewById(R.id.editTextCorreoAcceso);
         etContrasena = findViewById(R.id.editTextContrasenaAcceso);
@@ -99,7 +107,6 @@ public class AccesoApp extends AppCompatActivity {
 
     private void irainicio() {
         Intent i = new Intent(this,MainActivity.class);
-        i.putExtra("mail",etCorreo.getText().toString());
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
