@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuthException;
 import java.util.Objects;
 
 public class CrearCuenta extends AppCompatActivity {
-    EditText etNombre, etApellidos, etCorreo, etContrasena, etContrasenaConf;
+    EditText etNombre, etApellidos, etCorreo, etContrasena;
     Button btnCrear, btnCancelar;
     FirebaseAuth Autenticador;
     AwesomeValidation Validacion;
@@ -36,7 +36,6 @@ public class CrearCuenta extends AppCompatActivity {
         etApellidos = findViewById(R.id.editTextApellidos);
         etCorreo = findViewById(R.id.editTextCorreo);
         etContrasena = findViewById(R.id.editTextContrasena);
-        etContrasenaConf = findViewById(R.id.editTextConContrasena);
 
         btnCrear = findViewById(R.id.btnCrear);
         btnCancelar = findViewById(R.id.btnCancelar);
@@ -45,7 +44,9 @@ public class CrearCuenta extends AppCompatActivity {
         Validacion = new AwesomeValidation(ValidationStyle.BASIC);
 
         Validacion.addValidation(this,R.id.editTextCorreo, Patterns.EMAIL_ADDRESS,R.string.correo_incorrecto);
-        Validacion.addValidation(this,R.id.editTextContrasenaAcceso,".(6,)",R.string.contraseña_incorrecta);
+        Validacion.addValidation(this,R.id.editTextContrasena,".{6,}",R.string.contraseña_incorrecta);
+        Validacion.addValidation(this,R.id.editTextNombre,".{3,}",R.string.nombre_incorrecto);
+        Validacion.addValidation(this,R.id.editTextApellidos,".{3,}",R.string.apellido_incorrecto);
 
 
 
