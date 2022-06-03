@@ -19,6 +19,12 @@
             android:name=".MainActivity">
 
         </activity>
+        <activity
+            android:name=".CrearCuenta"
+            android:label="Crear nueva cuenta">
+
+        </activity>
+
         <activity android:name=".AccesoApp"
             android:exported="true"
             android:label="@string/app_name">
