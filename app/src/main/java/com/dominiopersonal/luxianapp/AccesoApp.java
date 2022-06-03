@@ -6,12 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AccesoApp extends AppCompatActivity {
     Button btn_acceso;
     TextView txt_recuperar, txt_crear;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,8 @@ public class AccesoApp extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
+                intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -34,8 +35,8 @@ public class AccesoApp extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AccesoApp.this,CrearCuenta.class);
-                startActivity(i);
+                intent = new Intent(getApplicationContext(),CrearCuenta.class);
+                startActivity(intent);
             }
         });
 
@@ -43,7 +44,8 @@ public class AccesoApp extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(AccesoApp.this,OlvidarContraseña.class);
+                startActivity(i);
             }
         });
 

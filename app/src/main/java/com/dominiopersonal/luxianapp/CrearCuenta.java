@@ -19,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 
+import java.util.Objects;
+
 public class CrearCuenta extends AppCompatActivity {
     EditText etNombre, etApellidos, etCorreo, etContrasena, etContrasenaConf;
     Button btnCrear, btnCancelar;
@@ -42,8 +44,6 @@ public class CrearCuenta extends AppCompatActivity {
         Autenticador = FirebaseAuth.getInstance();
         Validacion = new AwesomeValidation(ValidationStyle.BASIC);
 
-        Validacion.addValidation(this,R.id.editTextNombre,".(4,)",R.string.nombre_incorrecto);
-        Validacion.addValidation(this,R.id.editTextApellidos,".(4,)",R.string.apellido_incorrecto);
         Validacion.addValidation(this,R.id.editTextCorreo, Patterns.EMAIL_ADDRESS,R.string.correo_incorrecto);
         Validacion.addValidation(this,R.id.editTextContrasenaAcceso,".(6,)",R.string.contraseña_incorrecta);
 
@@ -55,15 +55,11 @@ public class CrearCuenta extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String nombre = etNombre.getText().toString();
-                String apellidos = etApellidos.getText().toString();
+
                 String email = etCorreo.getText().toString();
                 String contrasena = etContrasena.getText().toString();
-                String valcontrasena = etContrasenaConf.getText().toString();
 
-                if(R.id.editTextConContrasena != R.id.editTextContrasenaAcceso){
-                    Toast.makeText(CrearCuenta.this,"Es necesario que coincidan las contraseñas", Toast.LENGTH_SHORT).show();
-                } else if (Validacion.validate()){
+                if (Validacion.validate()){
                     Autenticador.createUserWithEmailAndPassword(email,contrasena).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -71,7 +67,7 @@ public class CrearCuenta extends AppCompatActivity {
                                 Toast.makeText(CrearCuenta.this,"Usuario creado con éxito", Toast.LENGTH_SHORT).show();
                                 finish();
                             } else {
-                                String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
+                                String errorCode = ((FirebaseAuthException) Objects.requireNonNull(task.getException())).getErrorCode();
                                 Errores(errorCode);
                             }
                         }
@@ -157,9 +153,7 @@ public class CrearCuenta extends AppCompatActivity {
                 Toast.makeText(CrearCuenta.this, "No hay ningún registro de usuario que corresponda a este identificador. Es posible que se haya eliminado al usuario.", Toast.LENGTH_LONG).show();
                 break;
 
-            case "ERROR_INVALID_USER_TOKEN":
-                Toast.makeText(CrearCuenta.this, "La credencial del usuario ya no es válida. El usuario debe iniciar sesión nuevamente.", Toast.LENGTH_LONG).show();
-                break;
+
 
             case "ERROR_OPERATION_NOT_ALLOWED":
                 Toast.makeText(CrearCuenta.this, "Esta operación no está permitida. Debes habilitar este servicio en la consola.", Toast.LENGTH_LONG).show();
