@@ -6,6 +6,9 @@
     <string name="title_favoritos">Favoritos</string>
 
 
+    <string name="nombre_incorrecto">Ingrese un nombre</string>
+    <string name="apellido_incorrecto">Ingrese mínimo un apellido</string>
     <string name="correo_incorrecto">Ingrese un correo válido</string>
     <string name="contraseña_incorrecta">Ingrese una contraseña con más de 6 dígitos</string>
+    <string name="comprobación_contraseña">Deben coincidir las contraseñas</string>
 </resources>
