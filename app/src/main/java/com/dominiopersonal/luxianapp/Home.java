@@ -43,8 +43,6 @@ public class Home extends AppCompatActivity {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(mNames, mImageUrls, this);
         recyclerView.setAdapter(adapter);
 
-
-
     }
 
 }

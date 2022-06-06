@@ -18,14 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:scaleType="centerCrop"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_view"
                 android:src="@drawable/ic_busquedas_background">
-            </ImageView>
+            </de.hdodenhof.circleimageview.CircleImageView>
 
             <TextView
                 android:layout_width="wrap_content"
