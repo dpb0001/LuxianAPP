@@ -15,8 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LuxianAPP"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyADftb1tDlB2dIjZd4a4l2WTuGEBc62NgQ"/>
+
+
         <activity
             android:name=".MainActivity">
+
+        </activity>
+        <activity
+            android:name=".Mapa">
 
         </activity>
         <activity
