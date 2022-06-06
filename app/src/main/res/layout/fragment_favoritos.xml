@@ -6,19 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.favoritos.FavoritosFragment">
 
-    <TextView
-        android:id="@+id/text_favoritos"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnPruebaMapas"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="211dp"
+        android:text="pruebas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/title_favoritos" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
