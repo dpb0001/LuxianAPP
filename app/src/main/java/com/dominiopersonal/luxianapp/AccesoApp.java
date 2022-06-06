@@ -97,7 +97,7 @@ public class AccesoApp extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AccesoApp.this,OlvidarContraseña.class);
+                Intent i = new Intent(AccesoApp.this, OlvidarContrasena.class);
                 startActivity(i);
             }
         });

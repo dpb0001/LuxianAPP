@@ -24,6 +24,11 @@
             android:label="Crear nueva cuenta">
 
         </activity>
+        <activity
+            android:name=".OlvidarContrasena"
+            android:label="Recuperar Contraseña">
+
+        </activity>
 
         <activity android:name=".AccesoApp"
             android:exported="true"
