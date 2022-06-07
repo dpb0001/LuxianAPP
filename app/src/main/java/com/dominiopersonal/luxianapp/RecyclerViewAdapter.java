@@ -2,17 +2,18 @@ package com.dominiopersonal.luxianapp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.dominiopersonal.luxianapp.Categorias.Arte2;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private static final String TAG = "RecyclerViewAdapter";
 
+    private boolean presionado = false;
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private Context mContext;
@@ -51,7 +53,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext,mNames.get(position), Toast.LENGTH_SHORT).show();
+                //if (mNames.get(0)){
+                    Intent intent = new Intent(view.getContext(), Arte2.class);
+                    mContext.startActivity(intent);
+                //}
+
+                //Toast.makeText(mContext,mNames.get(position), Toast.LENGTH_SHORT).show();
             }
         });
 
