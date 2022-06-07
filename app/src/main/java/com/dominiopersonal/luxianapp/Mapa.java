@@ -49,34 +49,25 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
         }
         mapa.setMyLocationEnabled(true);
 
-        mapa.getUiSettings().setMyLocationButtonEnabled(false);
+        mapa.getUiSettings().setMyLocationButtonEnabled(true);
 
         LocationManager locationManager = (LocationManager) Mapa.this.getSystemService(Context.LOCATION_SERVICE);
         LocationListener locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                LatLng miUbicacion = new LatLng(location.getLatitude(), location.getLongitude());
-                mapa.addMarker(new MarkerOptions().position(miUbicacion).title("ubicacion actual"));
-                mapa.moveCamera(CameraUpdateFactory.newLatLng(miUbicacion));
-                CameraPosition cameraPosition = new CameraPosition.Builder()
-                        .target(miUbicacion)
-                        .zoom(14)
-                        .bearing(90)
-                        .tilt(45)
-                        .build();
-                mapa.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
 
                 LatLng medac = new LatLng(40.283828, -3.783878);
                 LatLng medac2 = new LatLng(40.283648, -3.784050);
 
                 mapa.addMarker(new MarkerOptions()
                         .position(medac)
-                        .title("MEDAC Fuenlabrada"));
+                        .title("MEDAC Fuenlabrada")
+                        );
                 mapa.addMarker(new MarkerOptions()
                         .position(medac2));
                 mapa.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-                mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(medac, 15));
 
             }
 
