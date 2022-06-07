@@ -4,10 +4,9 @@
     package="com.dominiopersonal.luxianapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 
     <application
         android:allowBackup="true"
@@ -19,35 +18,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LuxianAPP"
         tools:targetApi="31">
+        <activity
+            android:name=".Categorias.Gastronomia2"
+            android:exported="false" />
+        <activity
+            android:name=".Categorias.Deporte2"
+            android:exported="false" />
+        <activity
+            android:name=".Categorias.AireLibre2"
+            android:exported="false" />
+        <activity
+            android:name=".Categorias.Arte2"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyADftb1tDlB2dIjZd4a4l2WTuGEBc62NgQ"/>
-
+            android:value="AIzaSyADftb1tDlB2dIjZd4a4l2WTuGEBc62NgQ" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".MainActivity">
-
-        </activity>
-        <activity
-            android:name=".Mapa">
-
-        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Mapa" />
         <activity
             android:name=".CrearCuenta"
-            android:label="Crear nueva cuenta">
-
-        </activity>
+            android:label="Crear nueva cuenta" />
         <activity
             android:name=".OlvidarContrasena"
-            android:label="Recuperar Contraseña">
-
-        </activity>
-
-        <activity android:name=".AccesoApp"
+            android:label="Recuperar Contraseña" />
+        <activity
+            android:name=".AccesoApp"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
