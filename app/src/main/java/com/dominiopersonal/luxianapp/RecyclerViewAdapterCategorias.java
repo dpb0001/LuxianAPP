@@ -53,9 +53,14 @@ public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<Recycler
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //if (mNames.get(0)){
+                //mNames.get(position);
+                //if (position == 0){
                     Intent intent = new Intent(view.getContext(), Arte2.class);
                     mContext.startActivity(intent);
+                //}else if (position == 1){
+                    //Intent intent = new Intent(view.getContext(), Deporte2.class);
+                    //mContext.startActivity(intent);
+
                 //}
 
                 //Toast.makeText(mContext,mNames.get(position), Toast.LENGTH_SHORT).show();
@@ -76,8 +81,8 @@ public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<Recycler
 
         public ViewHolder(View itemView){
             super(itemView);
-            image = itemView.findViewById(R.id.image_view);
-            name = itemView.findViewById(R.id.name);
+            image = itemView.findViewById(R.id.imagen_ciudad);
+            name = itemView.findViewById(R.id.nombre_ciudad);
 
         }
     }
