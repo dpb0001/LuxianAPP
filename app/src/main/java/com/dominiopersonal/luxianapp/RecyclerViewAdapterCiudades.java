@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,14 +19,12 @@ public class RecyclerViewAdapterCiudades extends RecyclerView.Adapter<RecyclerVi
     private ArrayList <String> Ciudad = new ArrayList<>();
     private ArrayList <String> ImagenCiudad = new ArrayList<>();
     private ArrayList <String> Descripcion = new ArrayList<>();
-    private ArrayList <String> Boton = new ArrayList<>();
     private Context context;
 
-    public RecyclerViewAdapterCiudades(ArrayList<String> ciudad, ArrayList<String> imagenCiudad, ArrayList<String> descripcion, ArrayList<String> boton, Context context) {
+    public RecyclerViewAdapterCiudades(ArrayList<String> ciudad, ArrayList<String> imagenCiudad, ArrayList<String> descripcion, Context context) {
         Ciudad = ciudad;
         ImagenCiudad = imagenCiudad;
         Descripcion = descripcion;
-        Boton = boton;
         this.context = context;
     }
 
@@ -49,9 +46,8 @@ public class RecyclerViewAdapterCiudades extends RecyclerView.Adapter<RecyclerVi
 
         holder.textoCiudad.setText(Ciudad.get(position));
         holder.descripcion.setText(Descripcion.get(position));
-        holder.informacion.setText(Boton.get(position));
 
-        holder.informacion.setOnClickListener(new View.OnClickListener() {
+        holder.imagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -70,7 +66,6 @@ public class RecyclerViewAdapterCiudades extends RecyclerView.Adapter<RecyclerVi
         ImageView imagen;
         TextView textoCiudad;
         TextView descripcion;
-        Button informacion;
 
 
         public ViewHolderCiudades(@NonNull View itemView) {
@@ -78,7 +73,6 @@ public class RecyclerViewAdapterCiudades extends RecyclerView.Adapter<RecyclerVi
             imagen = itemView.findViewById(R.id.imagen_ciudad);
             textoCiudad = itemView.findViewById(R.id.nombre_ciudad);
             descripcion = itemView.findViewById(R.id.descripcion);
-            informacion = itemView.findViewById(R.id.btnInformacion);
         }
     }
 }

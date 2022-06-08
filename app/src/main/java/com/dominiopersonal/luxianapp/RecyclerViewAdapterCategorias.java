@@ -26,13 +26,13 @@ public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<Recycler
     private static final String TAG = "RecyclerViewAdapter";
 
     private boolean presionado = false;
-    private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
+    private ArrayList<String> NomCategoria = new ArrayList<>();
+    private ArrayList<String> ImgCategoria = new ArrayList<>();
     private Context mContext;
 
     public RecyclerViewAdapterCategorias(ArrayList<String> names, ArrayList<String> imageUrls, Context context){
-        mNames = names;
-        mImageUrls = imageUrls;
+        NomCategoria = names;
+        ImgCategoria = imageUrls;
         mContext = context;
 
     }
@@ -49,15 +49,15 @@ public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<Recycler
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Glide.with(mContext)
                 .asBitmap()
-                .load(mImageUrls.get(position))
+                .load(ImgCategoria.get(position))
                 .into(holder.image);
 
-        holder.name.setText(mNames.get(position));
+        holder.name.setText(NomCategoria.get(position));
 
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mNames.get(position);
+                NomCategoria.get(position);
                 if (position == 0){
                     Intent intent = new Intent(view.getContext(), Arte2.class);
                     mContext.startActivity(intent);
@@ -88,7 +88,7 @@ public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<Recycler
 
     @Override
     public int getItemCount() {
-        return mNames.size();
+        return NomCategoria.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -97,8 +97,8 @@ public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<Recycler
 
         public ViewHolder(View itemView){
             super(itemView);
-            image = itemView.findViewById(R.id.imagen_ciudad);
-            name = itemView.findViewById(R.id.nombre_ciudad);
+            image = itemView.findViewById(R.id.imagen_categoria);
+            name = itemView.findViewById(R.id.nombre_categoria);
 
         }
     }
