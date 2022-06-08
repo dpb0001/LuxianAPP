@@ -5,11 +5,13 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
-
+<!--
     <item
         android:id="@+id/navigation_busqueda"
         android:icon="@drawable/ic_busquedas_foreground"
         android:title="@string/title_busqueda" />
+        -->
+
 
     <item
         android:id="@+id/navigation_favoritos"
