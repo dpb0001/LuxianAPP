@@ -1,6 +1,10 @@
 package com.dominiopersonal.luxianapp;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -9,8 +13,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
@@ -22,6 +29,7 @@ import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
+import java.lang.String;
 
 public class AccesoApp extends AppCompatActivity {
     Button btn_acceso;
@@ -33,10 +41,17 @@ public class AccesoApp extends AppCompatActivity {
     AwesomeValidation validacion;
     FirebaseAuth autenticador;
 
+    private final int REQUEST_CODE = 123;
+    String LOCATION_PROVIDER = LocationManager.GPS_PROVIDER;
+    LocationManager mLocationManager;
+    LocationListener mLocationListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acceso_app);
+        pedirPermisos();
+
 
         btn_acceso = findViewById(R.id.btnAcceso);
 
@@ -53,6 +68,7 @@ public class AccesoApp extends AppCompatActivity {
         FirebaseUser usuario = automatico.getCurrentUser();
 
         if (usuario != null){
+            pedirPermisos();
             irainicio();
         }
 
@@ -102,6 +118,21 @@ public class AccesoApp extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void pedirPermisos() {
+
+        int permiso = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        if(permiso == PackageManager.PERMISSION_DENIED){
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)){
+
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }
+        }
 
     }
 
