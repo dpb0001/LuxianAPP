@@ -17,7 +17,7 @@ import com.dominiopersonal.luxianapp.Categorias.Arte2;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<RecyclerViewAdapterCategorias.ViewHolder>{
 
     private static final String TAG = "RecyclerViewAdapter";
 
@@ -26,7 +26,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private Context mContext;
 
-    public  RecyclerViewAdapter(ArrayList<String> names, ArrayList<String> imageUrls, Context context){
+    public RecyclerViewAdapterCategorias(ArrayList<String> names, ArrayList<String> imageUrls, Context context){
         mNames = names;
         mImageUrls = imageUrls;
         mContext = context;
@@ -37,7 +37,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_horizontal_categorias, parent, false);
         return new ViewHolder(view);
     }
 

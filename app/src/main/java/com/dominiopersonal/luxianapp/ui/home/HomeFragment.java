@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dominiopersonal.luxianapp.R;
-import com.dominiopersonal.luxianapp.RecyclerViewAdapter;
+import com.dominiopersonal.luxianapp.RecyclerViewAdapterCategorias;
 import com.dominiopersonal.luxianapp.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
@@ -67,7 +67,7 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mNames, mImageUrls, getContext());
+        RecyclerViewAdapterCategorias adapter = new RecyclerViewAdapterCategorias(mNames, mImageUrls, getContext());
         recyclerView.setAdapter(adapter);
 
     }
