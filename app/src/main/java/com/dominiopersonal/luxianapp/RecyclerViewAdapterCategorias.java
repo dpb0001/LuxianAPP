@@ -23,9 +23,6 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<RecyclerViewAdapterCategorias.ViewHolder>{
 
-    private static final String TAG = "RecyclerViewAdapter";
-
-    private boolean presionado = false;
     private ArrayList<String> NomCategoria = new ArrayList<>();
     private ArrayList<String> ImgCategoria = new ArrayList<>();
     private Context mContext;
