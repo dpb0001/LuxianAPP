@@ -13,7 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.dominiopersonal.luxianapp.Categorias.AireLibre2;
 import com.dominiopersonal.luxianapp.Categorias.Arte2;
+import com.dominiopersonal.luxianapp.Categorias.Deporte2;
+import com.dominiopersonal.luxianapp.Categorias.Gastronomia2;
+import com.dominiopersonal.luxianapp.Categorias.Ocio2;
 
 import java.util.ArrayList;
 
@@ -53,15 +57,27 @@ public class RecyclerViewAdapterCategorias extends RecyclerView.Adapter<Recycler
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //mNames.get(position);
-                //if (position == 0){
+                mNames.get(position);
+                if (position == 0){
                     Intent intent = new Intent(view.getContext(), Arte2.class);
                     mContext.startActivity(intent);
-                //}else if (position == 1){
-                    //Intent intent = new Intent(view.getContext(), Deporte2.class);
-                    //mContext.startActivity(intent);
+                }else if (position == 1){
+                    Intent intent = new Intent(view.getContext(), Gastronomia2.class);
+                    mContext.startActivity(intent);
 
-                //}
+                }else if (position == 2){
+                    Intent intent = new Intent(view.getContext(), Deporte2.class);
+                    mContext.startActivity(intent);
+
+                }else if (position == 3){
+                    Intent intent = new Intent(view.getContext(), Ocio2.class);
+                    mContext.startActivity(intent);
+
+                }else if (position == 4){
+                    Intent intent = new Intent(view.getContext(), AireLibre2.class);
+                    mContext.startActivity(intent);
+
+                }
 
                 //Toast.makeText(mContext,mNames.get(position), Toast.LENGTH_SHORT).show();
             }

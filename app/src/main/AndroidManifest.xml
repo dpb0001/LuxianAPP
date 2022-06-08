@@ -36,6 +36,31 @@
             android:name=".MainActivity">
 
         </activity>
+
+        <activity
+            android:name=".Categorias.Arte2">
+
+        </activity>
+
+        <activity
+            android:name=".Categorias.Ocio2">
+
+        </activity>
+
+        <activity
+            android:name=".Categorias.Gastronomia2">
+
+        </activity>
+
+        <activity
+            android:name=".Categorias.Deporte2">
+
+        </activity>
+
+        <activity
+            android:name=".Categorias.AireLibre2">
+
+        </activity>
         <activity
             android:name=".mapas.Mapa">
 
