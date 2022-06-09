@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -67,7 +68,7 @@ public class RecyclerViewAdapterCadaCategoria extends RecyclerView.Adapter<Recyc
         CircleImageView imagenCadaCategoria;
         TextView nombreCiudadCategoria;
         TextView descripcionCiudadCategoria;
-        RecyclerView parent_layout;
+        RelativeLayout parent_layout;
 
         public ViewHolderCadaCategoria(@NonNull View itemView) {
             super(itemView);
