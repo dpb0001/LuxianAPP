@@ -6,13 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".Categorias.Ocio2">
 
-    <Button
-        android:id="@+id/button5"
+    <TextView
+        android:id="@+id/tvOcio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="20dp"
         android:text="Ocio"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="16dp"
+        android:text="Aqui encontratas las ciudades mejor valoradas segun sus actividades de ocio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOcio" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="110dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCategoriaOcio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,10 +22,10 @@ public class Arte2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arte2);
 
-        getImagesCadaCategoria();
+        getImagesArte();
     }
 
-    private void getImagesCadaCategoria(){
+    private void getImagesArte(){
         ImagenCadaCategoria.add("https://as2.ftcdn.net/v2/jpg/00/65/29/23/1000_F_65292379_4OV8BivNZ8hXfWphx7yS1gNiRMiORmRL.jpg");
         NombreCiudadCategoria.add("Madrid");
         DescripcionCiudadCategoria.add("Descripcion de cada ciudad Descripcion de cada ciudad Descripcion de cada ciudad");
@@ -46,11 +46,11 @@ public class Arte2 extends AppCompatActivity {
         NombreCiudadCategoria.add("Murcia");
         DescripcionCiudadCategoria.add("Descripcion de cada ciudad Descripcion de cada ciudad Descripcion de cada ciudad");
 
-        initRecyclerViewCadaCategoria();
+        initRecyclerViewArte();
     }
 
-    private void initRecyclerViewCadaCategoria(){
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewCadaCategoria);
+    private void initRecyclerViewArte(){
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewCategoriaArte);
         RecyclerViewAdapterCadaCategoria adapter = new RecyclerViewAdapterCadaCategoria(ImagenCadaCategoria, NombreCiudadCategoria, DescripcionCiudadCategoria, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

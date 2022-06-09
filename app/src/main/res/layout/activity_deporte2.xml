@@ -6,13 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".Categorias.Deporte2">
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/tvDeporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="20dp"
         android:text="Deporte"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="16dp"
+        android:text="Aqui encontratas las ciudades mejor valoradas segun sus actividades deportivas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDeporte" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="110dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCategoriaDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
