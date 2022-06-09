@@ -17,6 +17,7 @@ import com.dominiopersonal.luxianapp.databinding.FragmentFavoritosBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
 
 public class FavoritosFragment extends Fragment {
 
@@ -24,8 +25,8 @@ public class FavoritosFragment extends Fragment {
 
     FirebaseFirestore firestore;
 
-    String latitud;
-    String longitud;
+    Double latitud;
+    Double longitud;
 
     private FragmentFavoritosBinding binding;
 
@@ -45,9 +46,11 @@ public class FavoritosFragment extends Fragment {
                 Intent i = new Intent(getContext(), Mapa.class);
                 i.putExtra("latitud", latitud);
                 i.putExtra("longitud", longitud);
+
                 startActivity(i);
 
             }
+
         });
 
         return root;
@@ -58,9 +61,10 @@ public class FavoritosFragment extends Fragment {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
-                    latitud = documentSnapshot.getString("Latitud");
-                    longitud = documentSnapshot.getString("Longitud");
+                    latitud = documentSnapshot.getDouble("Latitud");
+                    longitud = documentSnapshot.getDouble("Longitud");
 
+                } else {
 
                 }
             }

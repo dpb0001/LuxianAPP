@@ -7,21 +7,48 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.dominiopersonal.luxianapp.BBDD.Modelo.Plan;
 import com.dominiopersonal.luxianapp.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
 
 public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mapa;
+
+    Bundle datos;
+
+    private FirebaseFirestore db;
+    private GeoPoint puntos;
+    String TAG = "DocSnippets";
+
+    Double planLatitud, planLongitud;
+
+    private FirebaseDatabase bbdd = FirebaseDatabase.getInstance();
+    private DatabaseReference reference = bbdd.getReference().child("Plan");
 
 
     @Override
@@ -46,6 +73,8 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
         }
         mapa.setMyLocationEnabled(true);
 
+
+
         mapa.getUiSettings().setMyLocationButtonEnabled(true);
 
         LocationManager locationManager = (LocationManager) Mapa.this.getSystemService(Context.LOCATION_SERVICE);
@@ -54,8 +83,31 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
             public void onLocationChanged(Location location) {
 
 
-                LatLng medac = new LatLng(40.283828, -3.783878);
-                LatLng medac2 = new LatLng(40.283648, -3.784050);
+
+                datos = getIntent().getExtras();
+
+
+                reference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot snap:snapshot.getChildren()) {
+                            Plan plan = snap.getValue(Plan.class);
+                            plan.getLatitud();
+                            plan.getLongitud();
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+                obtenerMapas();
+
+                LatLng medac = new LatLng(40.283648, -3.78405);
+                LatLng medac2 = new LatLng(puntos.getLatitude(), puntos.getLongitude());
 
                 mapa.addMarker(new MarkerOptions()
                         .position(medac)
@@ -65,6 +117,46 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
                         .position(medac2));
                 mapa.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
+
+            }
+
+            private void  obtenerMapas () {
+
+                db.collection("Plan").document("PlanSol").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.exists()){
+
+                            puntos = documentSnapshot.getGeoPoint("Puntos");
+
+                        } else {
+                            Toast.makeText(Mapa.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+
+                /*
+                DocumentReference docRef = db.collection("cities").document("SF");
+
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                            } else {
+                                Log.d(TAG, "No such document");
+                            }
+                        } else {
+                            Log.d(TAG, "get failed with ", task.getException());
+                        }
+                    }
+
+
+                });
+                */
 
             }
 
