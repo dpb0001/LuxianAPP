@@ -59,7 +59,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
                 mapa.addMarker(new MarkerOptions()
                         .position(medac)
-                        .title("MEDAC Fuenlabrada")
+                        .title("MEDAC Fuenlabrada" )
                         );
                 mapa.addMarker(new MarkerOptions()
                         .position(medac2));

@@ -14,10 +14,18 @@ import androidx.lifecycle.ViewModelProvider;
 import com.dominiopersonal.luxianapp.mapas.Mapa;
 import com.dominiopersonal.luxianapp.R;
 import com.dominiopersonal.luxianapp.databinding.FragmentFavoritosBinding;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class FavoritosFragment extends Fragment {
 
     Button btnPruebasMapas;
+
+    FirebaseFirestore firestore;
+
+    String latitud;
+    String longitud;
 
     private FragmentFavoritosBinding binding;
 
@@ -35,15 +43,28 @@ public class FavoritosFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), Mapa.class);
+                i.putExtra("latitud", latitud);
+                i.putExtra("longitud", longitud);
                 startActivity(i);
 
             }
         });
 
-
-
-
         return root;
+    }
+
+    private void  obtenerDatos () {
+        firestore.collection("Plan").document("PlanSol").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    latitud = documentSnapshot.getString("Latitud");
+                    longitud = documentSnapshot.getString("Longitud");
+
+
+                }
+            }
+        });
     }
 
     @Override
