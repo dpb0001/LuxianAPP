@@ -2,12 +2,12 @@ package com.dominiopersonal.luxianapp.BBDD.Modelo;
 
 public class Plan {
 
-    String Altitud, Descripción, ID_plan, Latitud, Nombre, Precio, Tiempo;
+    String Longitud, Descripción, ID_plan, Latitud, Nombre, Precio, Tiempo;
 
     public Plan (){}
 
-    public Plan(String altitud, String descripción, String ID_plan, String latitud, String nombre, String precio, String tiempo) {
-        this.Altitud = altitud;
+    public Plan(String longitud, String descripción, String ID_plan, String latitud, String nombre, String precio, String tiempo) {
+        this.Longitud = longitud;
         this.Descripción = descripción;
         this.ID_plan = ID_plan;
         this.Latitud = latitud;
@@ -16,12 +16,12 @@ public class Plan {
         this.Tiempo = tiempo;
     }
 
-    public String getAltitud() {
-        return Altitud;
+    public String getLongitud() {
+        return Longitud;
     }
 
-    public void setAltitud(String altitud) {
-        Altitud = altitud;
+    public void setLongitud(String longitud) {
+        Longitud = longitud;
     }
 
     public String getDescripción() {
