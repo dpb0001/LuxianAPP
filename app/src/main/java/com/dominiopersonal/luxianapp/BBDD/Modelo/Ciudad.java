@@ -2,17 +2,18 @@ package com.dominiopersonal.luxianapp.BBDD.Modelo;
 
 public class Ciudad {
 
-    String Descripción, Foto, ID_ciudad, Latitud, Longitud, Nombre;
+    String Descripción, Foto, Nombre;
+    Long ID_ciudad, Latitud, Longitud;
 
     public Ciudad(){}
 
-    public Ciudad(String descripción, String foto, String ID_ciudad, String latitud, String longitud, String nombre) {
+    public Ciudad(String descripción, String foto, String nombre, Long ID_ciudad, Long latitud, Long longitud) {
         this.Descripción = descripción;
         this.Foto = foto;
-        this.ID_ciudad = ID_ciudad;
-        this.Latitud = latitud;
-        this.Longitud = longitud;
         this.Nombre = nombre;
+        this.ID_ciudad = ID_ciudad;
+        Latitud = latitud;
+        Longitud = longitud;
     }
 
     public String getDescripción() {
@@ -31,35 +32,35 @@ public class Ciudad {
         Foto = foto;
     }
 
-    public String getID_ciudad() {
-        return ID_ciudad;
-    }
-
-    public void setID_ciudad(String ID_ciudad) {
-        this.ID_ciudad = ID_ciudad;
-    }
-
-    public String getLatitud() {
-        return Latitud;
-    }
-
-    public void setLatitud(String latitud) {
-        Latitud = latitud;
-    }
-
-    public String getLongitud() {
-        return Longitud;
-    }
-
-    public void setLongitud(String longitud) {
-        Longitud = longitud;
-    }
-
     public String getNombre() {
         return Nombre;
     }
 
     public void setNombre(String nombre) {
         Nombre = nombre;
+    }
+
+    public Long getID_ciudad() {
+        return ID_ciudad;
+    }
+
+    public void setID_ciudad(Long ID_ciudad) {
+        this.ID_ciudad = ID_ciudad;
+    }
+
+    public Long getLatitud() {
+        return Latitud;
+    }
+
+    public void setLatitud(Long latitud) {
+        Latitud = latitud;
+    }
+
+    public Long getLongitud() {
+        return Longitud;
+    }
+
+    public void setLongitud(Long longitud) {
+        Longitud = longitud;
     }
 }

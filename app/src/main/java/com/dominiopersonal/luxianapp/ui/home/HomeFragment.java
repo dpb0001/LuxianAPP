@@ -1,25 +1,119 @@
 package com.dominiopersonal.luxianapp.ui.home;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dominiopersonal.luxianapp.BBDD.Adaptador.CiudadAdapter;
+import com.dominiopersonal.luxianapp.BBDD.Modelo.Ciudad;
+import com.dominiopersonal.luxianapp.MainActivity;
 import com.dominiopersonal.luxianapp.R;
 import com.dominiopersonal.luxianapp.RecyclerViewAdapterCategorias;
 import com.dominiopersonal.luxianapp.RecyclerViewAdapterCiudades;
 import com.dominiopersonal.luxianapp.databinding.FragmentHomeBinding;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
+    private FragmentHomeBinding binding;
+    private RecyclerView recyclerView;
+    private ArrayList<Ciudad> ciudadArrayList;
+    private CiudadAdapter ciudadAdapter;
+    private FirebaseFirestore db;
+    ProgressDialog progressDialog;
+
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        HomeViewModel homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
+
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        progressDialog = new ProgressDialog(getContext());
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Creando datos... ");
+        progressDialog.show();
+
+        recyclerView = root.findViewById(R.id.recyclerViewCiudades);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        db = FirebaseFirestore.getInstance();
+        ciudadArrayList = new ArrayList<Ciudad>();
+        ciudadAdapter = new CiudadAdapter(HomeFragment.this.getContext(),ciudadArrayList);
+
+        recyclerView.setAdapter(ciudadAdapter);
+
+        EventChangeListener();
+
+
+        return root;
+    }
+
+    private void EventChangeListener() {
+
+        db.collection("Ciudad").orderBy("ID_ciudad", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                if(error != null) {
+
+                    if(progressDialog.isShowing())
+                        progressDialog.dismiss();
+
+                    Log.e("Error de Firestore: ",error.getMessage());
+                    return;
+
+                }
+
+                for (DocumentChange dc : value.getDocumentChanges()) {
+
+                    if(dc.getType() == DocumentChange.Type.ADDED) {
+
+                        ciudadArrayList.add(dc.getDocument().toObject(Ciudad.class));
+
+                    }
+
+                    ciudadAdapter.notifyDataSetChanged();
+                    if(progressDialog.isShowing())
+                        progressDialog.dismiss();
+
+                }
+
+            }
+        });
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
+
+
+
+    /*
     //Se crean los ArrayList para poder añadir la información de las categorías y las ciudades más visitadas
 
     private FragmentHomeBinding binding;
@@ -118,4 +212,6 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
     }
+
+     */
 }
