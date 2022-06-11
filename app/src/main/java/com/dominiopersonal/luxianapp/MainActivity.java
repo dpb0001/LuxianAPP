@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Creando un menu para que aparezca la bandera
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.bandera,menu);

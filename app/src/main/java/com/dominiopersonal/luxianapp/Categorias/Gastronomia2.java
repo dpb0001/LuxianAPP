@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class Gastronomia2 extends AppCompatActivity {
 
+    //Se crean los ArrayList para poder almacenar la información
+
     private ArrayList<String> ImagenCadaCategoria = new ArrayList<>();
     private ArrayList<String> NombreCiudadCategoria = new ArrayList<>();
     private  ArrayList<String> DescripcionCiudadCategoria = new ArrayList<>();
@@ -22,9 +24,12 @@ public class Gastronomia2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gastronomia2);
+
+        //Añadiendo la información a la interfaz
         getImageGastronomia();
     }
 
+    //Insertando la información el los ArrayList
     private void getImageGastronomia(){
         ImagenCadaCategoria.add("https://i.pinimg.com/736x/de/75/ce/de75ce81f9cc8651b33fdc44985c8eac.jpg");
         NombreCiudadCategoria.add("Madrid");
@@ -46,10 +51,12 @@ public class Gastronomia2 extends AppCompatActivity {
         NombreCiudadCategoria.add("Murcia");
         DescripcionCiudadCategoria.add("Descripcion de cada ciudad Descripcion de cada ciudad Descripcion de cada ciudad");
 
+        //Añadiendo la información al RecyclerView
         initRecyclerViewGastronomia();
 
     }
 
+    //Asignando el RecyclerView al cual ira la información
     private void initRecyclerViewGastronomia(){
         RecyclerView recyclerView = findViewById(R.id.recyclerViewCategoriaGastronomia);
         RecyclerViewAdapterCadaCategoria adapter = new RecyclerViewAdapterCadaCategoria(ImagenCadaCategoria, NombreCiudadCategoria, DescripcionCiudadCategoria, this);

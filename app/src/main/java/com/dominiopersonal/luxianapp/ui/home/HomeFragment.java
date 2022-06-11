@@ -20,6 +20,8 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
+    //Se crean los ArrayList para poder añadir la información de las categorías y las ciudades más visitadas
+
     private FragmentHomeBinding binding;
     private ArrayList<String> NomCategoria = new ArrayList<>();
     private ArrayList<String> ImgCategoria = new ArrayList<>();
@@ -36,8 +38,10 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        //Añadiendo las informaciones a la interfaz
         getImages();
         getImagesCiudad();
+
         return root;
     }
 
@@ -47,6 +51,7 @@ public class HomeFragment extends Fragment {
         binding = null;
     }
 
+    //Insertando la información a los Arraylist de las categorias
     private void getImages(){
 
         ImgCategoria.add("https://as2.ftcdn.net/v2/jpg/00/65/29/23/1000_F_65292379_4OV8BivNZ8hXfWphx7yS1gNiRMiORmRL.jpg");
@@ -64,9 +69,11 @@ public class HomeFragment extends Fragment {
         ImgCategoria.add("https://img.freepik.com/vector-gratis/camping-al-aire-libre-logo-icono-vector-concepto-retro-ilustracion-diseno_557439-457.jpg?w=2000");
         NomCategoria.add("Aire libre");
 
+        //Añadiendo la información al RecyclerView
         initRecyclerView();
     }
 
+    //Asignando el RecyclerView al cual ira la información
     private void initRecyclerView(){
         View root = binding.getRoot();
 
@@ -78,6 +85,7 @@ public class HomeFragment extends Fragment {
 
     }
 
+    //Insertando la información a los Arraylist de las ciudades más visitadas
     private void getImagesCiudad(){
         Ciudad.add("Madrid");
         ImagenCiudad.add("data:image/png;base64,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");
@@ -95,9 +103,11 @@ public class HomeFragment extends Fragment {
         ImagenCiudad.add("https://www.dipusevilla.es/export/sites/diputacion-sevilla-corporativo/.galleries/IMAGENES-Contenido-general/bandera.jpg");
         Descripcion.add("sdfdfgdfgfgfdgdfgggfgdrfdgdfddg");
 
+        //Añadiendo la información al RecyclerView
         initRecyclerViewCiudades();
     }
 
+    //Asignando el RecyclerView al cual ira la información
     private void initRecyclerViewCiudades(){
         View root = binding.getRoot();
 

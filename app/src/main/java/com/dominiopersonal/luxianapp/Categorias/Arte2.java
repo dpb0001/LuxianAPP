@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class Arte2 extends AppCompatActivity {
 
+    //Se crean los ArrayList para poder almacenar la información
+
     private ArrayList<String> ImagenCadaCategoria = new ArrayList<>();
     private ArrayList<String> NombreCiudadCategoria = new ArrayList<>();
     private  ArrayList<String> DescripcionCiudadCategoria = new ArrayList<>();
@@ -22,9 +24,11 @@ public class Arte2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arte2);
 
+        //Añadiendo la información a la interfaz
         getImagesArte();
     }
 
+    //Insertando la información el los ArrayList
     private void getImagesArte(){
         ImagenCadaCategoria.add("https://as2.ftcdn.net/v2/jpg/00/65/29/23/1000_F_65292379_4OV8BivNZ8hXfWphx7yS1gNiRMiORmRL.jpg");
         NombreCiudadCategoria.add("Madrid");
@@ -46,9 +50,11 @@ public class Arte2 extends AppCompatActivity {
         NombreCiudadCategoria.add("Murcia");
         DescripcionCiudadCategoria.add("Descripcion de cada ciudad Descripcion de cada ciudad Descripcion de cada ciudad");
 
+        //Añadiendo la información al RecyclerView
         initRecyclerViewArte();
     }
 
+    //Asignando el RecyclerView al cual ira la información
     private void initRecyclerViewArte(){
         RecyclerView recyclerView = findViewById(R.id.recyclerViewCategoriaArte);
         RecyclerViewAdapterCadaCategoria adapter = new RecyclerViewAdapterCadaCategoria(ImagenCadaCategoria, NombreCiudadCategoria, DescripcionCiudadCategoria, this);
