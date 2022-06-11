@@ -17,10 +17,13 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+
+
 public class CiudadAdapter extends RecyclerView.Adapter<CiudadAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<Ciudad> ciudadArrayList;
+
 
     public CiudadAdapter(Context context, ArrayList<Ciudad> ciudadArrayList) {
         this.context = context;
@@ -44,6 +47,7 @@ public class CiudadAdapter extends RecyclerView.Adapter<CiudadAdapter.MyViewHold
 
         holder.nombre_ciudad.setText(ciudad.getNombre());
         holder.descripcion.setText(ciudad.getDescripción());
+        holder.imagen_ciudad.setImageURI(ciudad.getFoto());
 
 
     }
