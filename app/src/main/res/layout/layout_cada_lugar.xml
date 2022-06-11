@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:id="@+id/parent_layout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Titulo"
+        android:id="@+id/nombre_lugar"
+        android:textColor="#000"
+        android:layout_marginLeft="15dp"
+        android:textSize="17sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/descripcion_lugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombre_lugar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:text="Descripción Descripción Descripción Descripción DescripciónDescripciónDescripciónDescripción"
+        android:textColor="#000">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiempo:"
+        android:id="@+id/tiempo_lugar"
+        android:layout_below="@+id/descripcion_lugar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="130 min"
+        android:id="@+id/tiempo"
+        android:layout_below="@+id/descripcion_lugar"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/tiempo_lugar"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000">
+
+    </TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio:"
+        android:id="@+id/precio_lugar"
+        android:layout_below="@+id/descripcion_lugar"
+        android:layout_toRightOf="@+id/tiempo"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="#000">
+
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/precio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descripcion_lugar"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/precio_lugar"
+        android:text="1000€"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000">
+        
+    </TextView>
+
+
+</RelativeLayout>

@@ -19,18 +19,15 @@
         <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/fragment_favoritos.xml" value="0.25" />
         <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/fragment_home.xml" value="0.1484375" />
         <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/fragment_notifications.xml" value="0.1484375" />
-        <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/fragment_perfil.xml" value="0.264" />
+        <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/fragment_perfil.xml" value="0.1484375" />
         <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/fragment_pruebas.xml" value="0.1484375" />
         <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/home.xml" value="0.23425925925925925" />
-        <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/layout_cada_categoria.xml" value="0.25" />
-        <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/layout_horizontal_categorias.xml" value="0.1" />
-        <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/layout/layout_horizontal_ciudades.xml" value="0.25" />
         <entry key="..\:/Users/Glicorestar/Documents/GitHub/LuxianAPP/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1484375" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/drawable/ic_espana_background.xml" value="0.1015" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/drawable/ic_españa_background.xml" value="0.1015" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/drawable/ic_perfiles_foreground.xml" value="0.124" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/acceso_app.xml" value="0.11354166666666667" />
-        <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/activity_aire_libre2.xml" value="0.536" />
+        <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/activity_aire_libre2.xml" value="0.4" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/activity_arte2.xml" value="0.2" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/activity_deporte2.xml" value="0.72" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/activity_gastronomia2.xml" value="0.1" />
@@ -41,9 +38,11 @@
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/detalles.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/layout_cada_categoria.xml" value="0.264" />
+        <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/layout_cada_lugar.xml" value="0.264" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/layout_horizontal_categorias.xml" value="0.264" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/layout_horizontal_ciudades.xml" value="0.264" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/layout_listitem.xml" value="0.2" />
+        <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/lugar.xml" value="0.152" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/mapa.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/olvidar_contrasena.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/dawid/OneDrive/Documentos/GitHub/LuxianAPP/app/src/main/res/layout/registros.xml" value="0.11354166666666667" />
