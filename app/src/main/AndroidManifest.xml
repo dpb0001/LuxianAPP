@@ -32,43 +32,20 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".MainActivity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Categorias.Arte2"/>
+        <activity android:name=".Categorias.Ocio2"/>
+        <activity android:name=".Categorias.Gastronomia2"/>
+        <activity android:name=".Categorias.Deporte2"/>
+        <activity android:name=".Categorias.AireLibre2"/>
+        <activity android:name=".mapas.Mapa"/>
 
-
-        <activity
-            android:name=".Categorias.Arte2">
-
-        </activity>
-
-        <activity
-            android:name=".Categorias.Ocio2">
-
-        </activity>
-
-        <activity
-            android:name=".Categorias.Gastronomia2">
-
-        </activity>
-
-        <activity
-            android:name=".Categorias.Deporte2">
-
-        </activity>
-
-        <activity
-            android:name=".Categorias.AireLibre2">
-
-        </activity>
-        <activity
-            android:name=".mapas.Mapa">
-
-        </activity>
         <activity
             android:name=".CrearCuenta"
             android:label="Crear nueva cuenta">
 
         </activity>
+
         <activity
             android:name=".OlvidarContrasena"
             android:label="Recuperar Contraseña">
