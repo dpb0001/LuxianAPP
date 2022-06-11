@@ -38,14 +38,31 @@ public class FavoritosFragment extends Fragment {
         binding = FragmentFavoritosBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        firestore = FirebaseFirestore.getInstance();
+
+        // Obtener Datos
+
+        firestore.collection("Plan").document("PlanSol").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    latitud = documentSnapshot.getDouble("Latitud");
+                    longitud = documentSnapshot.getDouble("Longitud");
+                }
+            }
+        });
+
+        // Final Obtener Datos
+
         btnPruebasMapas = root.findViewById(R.id.btnPruebaMapas);
+
 
         btnPruebasMapas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), Mapa.class);
-                i.putExtra("latitud", latitud);
-                i.putExtra("longitud", longitud);
+                i.putExtra("Latitud", latitud);
+                i.putExtra("Longitud", longitud);
 
                 startActivity(i);
 
@@ -56,20 +73,7 @@ public class FavoritosFragment extends Fragment {
         return root;
     }
 
-    private void  obtenerDatos () {
-        firestore.collection("Plan").document("PlanSol").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if(documentSnapshot.exists()){
-                    latitud = documentSnapshot.getDouble("Latitud");
-                    longitud = documentSnapshot.getDouble("Longitud");
 
-                } else {
-
-                }
-            }
-        });
-    }
 
     @Override
     public void onDestroyView() {

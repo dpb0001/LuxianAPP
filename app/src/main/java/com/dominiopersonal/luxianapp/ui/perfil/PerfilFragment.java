@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,10 @@ public class PerfilFragment extends Fragment {
 
     Button btnDesconectar;
 
+    TextView txtCorreo;
+
+    FirebaseAuth datosUsuario = FirebaseAuth.getInstance();
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         PerfilViewModel perfilViewModel =
@@ -34,8 +39,11 @@ public class PerfilFragment extends Fragment {
         View root = binding.getRoot();
 
 
+        txtCorreo = root.findViewById(R.id.txtCorreoccesoAPerfil);
         btnDesconectar = root.findViewById(R.id.btn_desconectar);
 
+        datosUsuario.getCurrentUser().getDisplayName();
+        txtCorreo.setText(datosUsuario.toString());
         btnDesconectar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

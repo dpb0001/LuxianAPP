@@ -104,10 +104,9 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
                     }
                 });
 
-                obtenerMapas();
 
                 LatLng medac = new LatLng(40.283648, -3.78405);
-                LatLng medac2 = new LatLng(puntos.getLatitude(), puntos.getLongitude());
+                LatLng medac2 = new LatLng(datos.getDouble("Latitud"), datos.getDouble("Longitud"));
 
                 mapa.addMarker(new MarkerOptions()
                         .position(medac)
@@ -115,6 +114,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
                         );
                 mapa.addMarker(new MarkerOptions()
                         .position(medac2));
+
                 mapa.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
 
@@ -122,6 +122,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
             private void  obtenerMapas () {
 
+                /*
                 db.collection("Plan").document("PlanSol").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -134,6 +135,8 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
                         }
                     }
                 });
+
+                 */
 
 
                 /*
