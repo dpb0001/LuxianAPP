@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.favoritos.FavoritosFragment">
 
-    <Button
-        android:id="@+id/btnPruebaMapas"
+    <TextView
+        android:id="@+id/tvFavorito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="211dp"
-        android:text="pruebas"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="248dp"
+        android:text="Actualmente no tienes ningun favorito"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>
