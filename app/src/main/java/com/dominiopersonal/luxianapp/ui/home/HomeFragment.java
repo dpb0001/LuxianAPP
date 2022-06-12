@@ -1,6 +1,7 @@
 package com.dominiopersonal.luxianapp.ui.home;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dominiopersonal.luxianapp.BBDD.Adaptador.CiudadAdapter;
 import com.dominiopersonal.luxianapp.BBDD.Modelo.Ciudad;
 import com.dominiopersonal.luxianapp.BBDD.Modelo.Ruta;
+import com.dominiopersonal.luxianapp.ElementosRecycler;
 import com.dominiopersonal.luxianapp.MainActivity;
 import com.dominiopersonal.luxianapp.R;
 import com.dominiopersonal.luxianapp.RecyclerViewAdapterCategorias;
@@ -102,10 +105,13 @@ public class HomeFragment extends Fragment {
 
         // Final Obtener Datos
 
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
 
+        recyclerView.addOnItemTouchListener(new ElementosRecycler(getContext(), recyclerView, new ElementosRecycler.ClickListener(){
+
+            // En caso de que el usuario pulse un click sobre algun elemento del recycler, se pasara
+            // la información a la clase EditarCerveza para poder manipularla desde allí
+            @Override
+            public void onClick(View view, int posicion){
                 Intent i = new Intent(getContext(), Mapa.class);
 
                 i.putExtra("Latitud", 40.4321033);
@@ -113,19 +119,16 @@ public class HomeFragment extends Fragment {
 
                 startActivity(i);
 
-                return false;
             }
 
+            // Si el usuario mantiene el dedo sobre un elemento del recycler aparecera un mensaje
+            // indicando si quiere eliminar ese elemento
             @Override
-            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+            public void onLongClick(View view, int posicion) {
+
 
             }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
+        }));
 
 
         return root;
