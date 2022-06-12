@@ -44,8 +44,7 @@ public class HomeFragment extends Fragment {
     private ProgressDialog progressDialog;
 
     private Long ID_ciudad;
-    RecyclerView imagen_ciudad;
-
+    String Titulo;
 
     private ArrayList<String> NomCategoria = new ArrayList<>();
     private ArrayList<String> ImgCategoria = new ArrayList<>();
@@ -91,6 +90,9 @@ public class HomeFragment extends Fragment {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
                     ID_ciudad = documentSnapshot.getLong("ID_ciudad");
+                    Titulo = documentSnapshot.getString("Nombre");
+
+
                 }
             }
         });
@@ -108,6 +110,7 @@ public class HomeFragment extends Fragment {
 
                 i.putExtra("Latitud", 40.4321033);
                 i.putExtra("Longitud", -3.7340368);
+                i.putExtra("Nombre", Titulo);
 
                 startActivity(i);
 
