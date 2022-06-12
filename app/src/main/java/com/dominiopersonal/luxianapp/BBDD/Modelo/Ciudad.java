@@ -1,13 +1,19 @@
 package com.dominiopersonal.luxianapp.BBDD.Modelo;
 
+import java.util.Map;
+
 public class Ciudad {
 
     String Descripción, Foto, Nombre;
-    Long ID_ciudad, Latitud, Longitud;
+    Long ID_ciudad;
+    Double Latitud, Longitud;
 
-    public Ciudad(){}
 
-    public Ciudad(String descripción, String foto, String nombre, Long ID_ciudad, Long latitud, Long longitud) {
+    public Ciudad(){
+
+    }
+
+    public Ciudad(String descripción, String foto, String nombre, Long ID_ciudad, Double latitud, Double longitud) {
         this.Descripción = descripción;
         this.Foto = foto;
         this.Nombre = nombre;
@@ -48,19 +54,19 @@ public class Ciudad {
         this.ID_ciudad = ID_ciudad;
     }
 
-    public Long getLatitud() {
+    public Double getLatitud() {
         return Latitud;
     }
 
-    public void setLatitud(Long latitud) {
+    public void setLatitud(Double latitud) {
         Latitud = latitud;
     }
 
-    public Long getLongitud() {
+    public Double getLongitud() {
         return Longitud;
     }
 
-    public void setLongitud(Long longitud) {
+    public void setLongitud(Double longitud) {
         Longitud = longitud;
     }
 }

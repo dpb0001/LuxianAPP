@@ -39,12 +39,15 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<Ciudad> ciudadArrayList;
     private ArrayList<String> Nombre;
+    private ArrayList<Object> Pruebas;
+
     private CiudadAdapter ciudadAdapter;
     private FirebaseFirestore db;
     private ProgressDialog progressDialog;
 
-    private Long ID_ciudad;
-    String Titulo;
+    private String Titulo;
+    private Double Latitud;
+    private Double Longitud;
 
     private ArrayList<String> NomCategoria = new ArrayList<>();
     private ArrayList<String> ImgCategoria = new ArrayList<>();
@@ -83,9 +86,9 @@ public class HomeFragment extends Fragment {
 
         EventChangeListener();
 
-        // Obtener Datos
+        /* Obtener Datos
 
-        db.collection("Ciudad").document("Madrid").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        db.collection("Ciudad").document().get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
@@ -99,6 +102,8 @@ public class HomeFragment extends Fragment {
 
         // Final Obtener Datos
 
+         */
+
 
         recyclerView.addOnItemTouchListener(new ElementosRecycler(getContext(), recyclerView, new ElementosRecycler.ClickListener(){
 
@@ -106,13 +111,12 @@ public class HomeFragment extends Fragment {
             // la información a la clase EditarCerveza para poder manipularla desde allí
             @Override
             public void onClick(View view, int posicion){
-                Intent i = new Intent(getContext(), Mapa.class);
 
-                i.putExtra("Latitud", 40.4321033);
-                i.putExtra("Longitud", -3.7340368);
-                i.putExtra("Nombre", Titulo);
+                ciudadArrayList.get(posicion);
 
-                startActivity(i);
+
+
+
 
             }
 
@@ -154,6 +158,13 @@ public class HomeFragment extends Fragment {
                     if(dc.getType() == DocumentChange.Type.ADDED) {
 
                         ciudadArrayList.add(dc.getDocument().toObject(Ciudad.class));
+
+                        Titulo = dc.getDocument().getString("Nombre");
+                        Latitud = dc.getDocument().getDouble("Latitud");
+                        Longitud = dc.getDocument().getDouble("Longitud");
+
+
+
 
                     }
 

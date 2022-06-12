@@ -1,6 +1,7 @@
 package com.dominiopersonal.luxianapp.BBDD.Adaptador;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.dominiopersonal.luxianapp.BBDD.Modelo.Ciudad;
 import com.dominiopersonal.luxianapp.R;
+import com.dominiopersonal.luxianapp.mapas.Mapa;
 
 import java.util.ArrayList;
 
@@ -59,6 +61,14 @@ public class CiudadAdapter extends RecyclerView.Adapter<CiudadAdapter.MyViewHold
             public void onClick(View view) {
 
 
+                Intent i = new Intent(view.getContext(), Mapa.class);
+
+                i.putExtra("Latitud", ciudad.getLatitud());
+                i.putExtra("Longitud", ciudad.getLongitud());
+                i.putExtra("Nombre", ciudad.getNombre());
+
+                context.startActivity(i);
+
 
 
             }
@@ -77,6 +87,7 @@ public class CiudadAdapter extends RecyclerView.Adapter<CiudadAdapter.MyViewHold
 
         ImageView imagen_ciudad;
         TextView nombre_ciudad, descripcion;
+        String Titulo;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

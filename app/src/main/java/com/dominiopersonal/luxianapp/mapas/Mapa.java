@@ -51,6 +51,8 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
     private DatabaseReference reference = bbdd.getReference().child("Plan");
 
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,16 +107,13 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
                 });
 
 
-                LatLng medac = new LatLng(40.283648, -3.78405);
                 LatLng punto = new LatLng(datos.getDouble("Latitud"), datos.getDouble("Longitud"));
 
-                mapa.addMarker(new MarkerOptions()
-                        .position(medac)
-                        .title("MEDAC Fuenlabrada" )
-                        );
+
                 mapa.addMarker(new MarkerOptions()
                         .position(punto)
                         .title(datos.getString("Nombre")));
+
 
 
                 mapa.setMapType(GoogleMap.MAP_TYPE_NORMAL);
