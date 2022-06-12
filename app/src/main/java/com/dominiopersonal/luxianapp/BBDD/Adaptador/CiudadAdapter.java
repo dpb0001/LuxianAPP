@@ -46,6 +46,7 @@ public class CiudadAdapter extends RecyclerView.Adapter<CiudadAdapter.MyViewHold
 
         Ciudad ciudad = ciudadArrayList.get(position);
 
+
         Glide.with(context)
                 .asBitmap()
                 .load(ciudad.getFoto())

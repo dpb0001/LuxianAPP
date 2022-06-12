@@ -106,14 +106,16 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
 
                 LatLng medac = new LatLng(40.283648, -3.78405);
-                LatLng medac2 = new LatLng(datos.getDouble("Latitud"), datos.getDouble("Longitud"));
+                LatLng punto = new LatLng(datos.getDouble("Latitud"), datos.getDouble("Longitud"));
 
                 mapa.addMarker(new MarkerOptions()
                         .position(medac)
                         .title("MEDAC Fuenlabrada" )
                         );
                 mapa.addMarker(new MarkerOptions()
-                        .position(medac2));
+                        .position(punto)
+                        .title(datos.getString("Nombre")));
+
 
                 mapa.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 

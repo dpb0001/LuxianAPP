@@ -48,10 +48,6 @@ public class CrearCuenta extends AppCompatActivity {
         Validacion.addValidation(this,R.id.editTextNombre,".{3,}",R.string.nombre_incorrecto);
         Validacion.addValidation(this,R.id.editTextApellidos,".{3,}",R.string.apellido_incorrecto);
 
-
-
-
-
         btnCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
