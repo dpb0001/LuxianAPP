@@ -1,7 +1,6 @@
 package com.dominiopersonal.luxianapp.BBDD.Adaptador;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.dominiopersonal.luxianapp.BBDD.Modelo.Ciudad;
 import com.dominiopersonal.luxianapp.R;
-import com.dominiopersonal.luxianapp.mapas.Mapa;
 
 import java.util.ArrayList;
 
@@ -24,11 +22,13 @@ public class CiudadAdapter extends RecyclerView.Adapter<CiudadAdapter.MyViewHold
 
     Context context;
     ArrayList<Ciudad> ciudadArrayList;
+    ArrayList<String> Nombre = new ArrayList<>();
 
 
-    public CiudadAdapter(Context context, ArrayList<Ciudad> ciudadArrayList) {
+    public CiudadAdapter(Context context, ArrayList<Ciudad> ciudadArrayList, ArrayList<String> Nombre) {
         this.context = context;
         this.ciudadArrayList = ciudadArrayList;
+        this.Nombre = Nombre;
     }
 
 
@@ -56,6 +56,7 @@ public class CiudadAdapter extends RecyclerView.Adapter<CiudadAdapter.MyViewHold
         holder.imagen_ciudad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
 
 

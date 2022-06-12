@@ -1,20 +1,15 @@
 package com.dominiopersonal.luxianapp.ui.home;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,13 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dominiopersonal.luxianapp.BBDD.Adaptador.CiudadAdapter;
 import com.dominiopersonal.luxianapp.BBDD.Modelo.Ciudad;
-import com.dominiopersonal.luxianapp.BBDD.Modelo.Ruta;
 import com.dominiopersonal.luxianapp.ElementosRecycler;
-import com.dominiopersonal.luxianapp.MainActivity;
 import com.dominiopersonal.luxianapp.R;
 import com.dominiopersonal.luxianapp.RecyclerViewAdapterCategorias;
-import com.dominiopersonal.luxianapp.RecyclerViewAdapterCiudades;
-import com.dominiopersonal.luxianapp.RutaActivity;
 import com.dominiopersonal.luxianapp.databinding.FragmentHomeBinding;
 import com.dominiopersonal.luxianapp.mapas.Mapa;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -47,6 +38,7 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private RecyclerView recyclerView;
     private ArrayList<Ciudad> ciudadArrayList;
+    private ArrayList<String> Nombre;
     private CiudadAdapter ciudadAdapter;
     private FirebaseFirestore db;
     private ProgressDialog progressDialog;
@@ -86,7 +78,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         ciudadArrayList = new ArrayList<Ciudad>();
-        ciudadAdapter = new CiudadAdapter(HomeFragment.this.getContext(),ciudadArrayList);
+        ciudadAdapter = new CiudadAdapter(HomeFragment.this.getContext(),ciudadArrayList, Nombre);
 
         recyclerView.setAdapter(ciudadAdapter);
 
