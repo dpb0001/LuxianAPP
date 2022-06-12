@@ -120,48 +120,6 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
             }
 
-            private void  obtenerMapas () {
-
-                /*
-                db.collection("Plan").document("PlanSol").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.exists()){
-
-                            puntos = documentSnapshot.getGeoPoint("Puntos");
-
-                        } else {
-                            Toast.makeText(Mapa.this, "Error", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-                 */
-
-
-                /*
-                DocumentReference docRef = db.collection("cities").document("SF");
-
-                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                            } else {
-                                Log.d(TAG, "No such document");
-                            }
-                        } else {
-                            Log.d(TAG, "get failed with ", task.getException());
-                        }
-                    }
-
-
-                });
-                */
-
-            }
 
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -177,11 +135,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
             public void onProviderDisabled(String provider) {
 
             }
-        /*        LatLng "id_plan" = new LatLng("Latitud", "Longitud");
-        *  mapa.addMarker(new MarkerOptions()
-                .position("id_plan")
-                .title("Titulo"));
-        * */
+
 
         };
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);

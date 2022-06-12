@@ -39,6 +39,7 @@
         <activity android:name=".Categorias.Deporte2"/>
         <activity android:name=".Categorias.AireLibre2"/>
         <activity android:name=".mapas.Mapa"/>
+        <activity android:name=".RutaActivity"/>
 
         <activity
             android:name=".CrearCuenta"
